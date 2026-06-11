@@ -1,6 +1,9 @@
 # GakoUI
 
-A collection of widgets for [Kivy](https://kivy.org), styled to look like [Nuxt UI](https://ui.nuxt.com).
+GakoUI is a collection of widgets for [Kivy](https://kivy.org), inspired by the
+JavaScript library [Nuxt UI](https://ui.nuxt.com). The goal is to bring Nuxt
+UI's clean, modern look and component-first API to Python desktop apps built
+with Kivy.
 
 ![GakoUI screenshot 1](images/gakoui1.png)
 
@@ -91,3 +94,11 @@ gakoui/
 ## License
 
 [MIT](LICENSE) © Gako
+
+## Credits
+
+GakoUI is inspired by [Nuxt UI](https://ui.nuxt.com) (Vue / Nuxt component
+library by NuxtLabs). Widget names, variants and the Tailwind-like colour
+palette follow the same conventions to make the API familiar to anyone coming
+from the Nuxt UI ecosystem. GakoUI is an independent project and is not
+affiliated with or endorsed by NuxtLabs.

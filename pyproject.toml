@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "gakoui"
 version = "0.1.0"
-description = "Collection de widgets Kivy au style Nuxt UI"
+description = "Kivy widgets library inspired by Nuxt UI"
 readme = "README.md"
 requires-python = ">=3.13"
 license = { text = "MIT" }
