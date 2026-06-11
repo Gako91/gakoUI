@@ -1,7 +1,8 @@
 from kivy.lang import Builder
 from kivy.uix.boxlayout import BoxLayout
 from kivy.properties import AliasProperty, StringProperty, ListProperty
-from kivyui.data.colors import colors
+from gakoui.data import icon_path
+from gakoui.data.colors import colors
 
 KV = """
 <UTextInput>:
@@ -52,7 +53,7 @@ class UTextInput(BoxLayout):
     hint_text = StringProperty('Search...')
 
     def _get_icon(self):
-        return f'kivyui/data/icons/{self.icon}'
+        return icon_path(self.icon)
 
     _icon = AliasProperty(_get_icon, None, bind=['icon'])
 
@@ -60,9 +61,6 @@ class UTextInput(BoxLayout):
         return colors.get(self.color).get('fill')
 
     outline_color = AliasProperty(_get_outline_color, None, bind=['color'])
-
-    def _get_outline_color(self):
-        return colors.get(self.color).get('fill')
 
 
 Builder.load_string(KV)

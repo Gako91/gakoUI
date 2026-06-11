@@ -1,0 +1,29 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "gakoui"
+version = "0.1.0"
+description = "Collection de widgets Kivy au style Nuxt UI"
+readme = "README.md"
+requires-python = ">=3.13"
+license = { text = "MIT" }
+authors = [{ name = "Gako", email = "bricegnoboa@gmail.com" }]
+keywords = ["kivy", "ui", "widgets", "nuxt-ui"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: User Interfaces",
+]
+dependencies = ["kivy>=2.3.1", "python-dateutil>=2.9.0.post0", "pillow>=10.0.0"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["gakoui"]
+
+[tool.hatch.build.targets.sdist]
+include = ["gakoui", "README.md", "LICENSE"]

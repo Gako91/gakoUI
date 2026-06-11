@@ -1,9 +1,10 @@
 from kivy.lang import Builder
 from kivy.uix.boxlayout import BoxLayout
-from kivyui.behaviors import HoverBehavior
+from gakoui.behaviors import HoverBehavior
 from kivy.uix.behaviors import ButtonBehavior
 from kivy.properties import AliasProperty, StringProperty, ListProperty, BooleanProperty
-from kivyui.data.colors import colors
+from gakoui.data import icon_path
+from gakoui.data.colors import colors
 from kivy.core.window import Window
 
 KV = """
@@ -61,19 +62,13 @@ class UButton(HoverBehavior,ButtonBehavior,BoxLayout):
     right_icon = StringProperty('')
 
     def _get_left_icon(self):
-        if self.left_icon != "":
-            return f'kivyui/data/icons/{self.left_icon}'
-        else:
-            return ""
+        return icon_path(self.left_icon)
 
     _left_icon = AliasProperty(_get_left_icon, None, bind=['left_icon'])
 
 
     def _get_right_icon(self):
-        if self.right_icon != "":
-            return f'kivyui/data/icons/{self.right_icon}'
-        else:
-            return ""
+        return icon_path(self.right_icon)
 
     _right_icon = AliasProperty(_get_right_icon, None, bind=['right_icon'])
 
@@ -83,7 +78,7 @@ class UButton(HoverBehavior,ButtonBehavior,BoxLayout):
         else:
             return colors.get(self.color).get('fill')
 
-    font_color = AliasProperty(_get_font_color, None, bind=['color','hovered','variant'])
+    font_color = AliasProperty(_get_font_color, None, bind=['color','variant'])
 
     def _get_fill_color(self):
         if self.hovered:
@@ -91,7 +86,7 @@ class UButton(HoverBehavior,ButtonBehavior,BoxLayout):
                 fill = 'outline_hover'
             else:
                 fill = 'fill_hover'
-        if not self.hovered:
+        else:
             if self.variant in ['outline', 'ghost']:
                 return [0,0,0,0]
             else:
